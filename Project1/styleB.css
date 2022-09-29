@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.item {
+    display: block;
+
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 20px;
+
+    text-indent: 10px;
+
+    border-left: 10px solid #687291;
+
+    background-color: #d7d7d7;
+    column-gap: 10px;
+
+    white-space: nowrap;
+    width: 100px;
+    height: 150px;
+
+    margin: 5px;
+
+}
+.item:hover{
+    cursor: pointer;
+    background-color: blue;
+    border-color: yellow;
+    color: white;
+}
+
+.sep {
+    display: flex;
+}
+
+#item6 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+/*#d7d7d7, #f1f1f1

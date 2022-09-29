@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>CSE 4050 Project 3</title>
+    <link rel="stylesheet" type="text/css" href="dashboard.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="sidebar"></div>
+      <div id="content"></div>
+    </div>
+    <script type="text/javascript" src="dashboard.js"></script>
+    <script type="text/javascript">
+      'use strict';
+      /* global Dashboard */
+      var dashboard = new Dashboard('sidebar','content');
+      dashboard.render('Home','Account','Message','Support');
+    </script>
+  </body>
+</html>
