@@ -57,7 +57,7 @@ class Dashboard {
 
         document.getElementById("content").innerHTML = "Welcome to Dashboard!";
 
-
+        
 
     }
 }
