@@ -97,13 +97,22 @@ class Example extends React.Component {
     return retVal;
   }
 
+/*
+        <p className="cse4050-example-output">
+          My name is &ldquo; {this.state.name} &rdquo;.
+        </p>
+*/
+
   render() {
     return (
       <div className="container Example">
         <h1>CSE4050 Project#4 React.js Example</h1>
-
         <div className="motto-update">
-          {/* Your problem #1 motto displaying and updating widget goes here */}
+          <label htmlFor="inId">Motto: </label>
+          <input type="text" value={this.state.inputValue} onChange={this.handleChangeBound} />
+          <p className="cse4050-motto-output">
+            Jacob Dankel {this.state.inputValue}
+          </p>
         </div>
 
         <p>

@@ -9,6 +9,11 @@ class Dashboard {
     render(a,b,c,d){
         //could probably find a way to scroll through the elements rather than doing this by force
         const aButton = document.createElement('button');
+        const bButton = document.createElement('button');
+        const cButton = document.createElement('button');
+        const dButton = document.createElement('button');
+
+
         aButton.textContent = a;
         aButton.setAttribute("class","");
         document.getElementById("sidebar").append(aButton);
@@ -20,7 +25,7 @@ class Dashboard {
             dButton.classList.remove("active-btn");
         };
 
-        const bButton = document.createElement('button');
+
         bButton.textContent = b;
         bButton.setAttribute("class","");
         document.getElementById("sidebar").append(bButton);
@@ -32,7 +37,7 @@ class Dashboard {
             dButton.classList.remove("active-btn");
         };
 
-        const cButton = document.createElement('button');
+
         cButton.textContent = c;
         cButton.setAttribute("class","");
         document.getElementById("sidebar").append(cButton);
@@ -44,7 +49,7 @@ class Dashboard {
             dButton.classList.remove("active-btn");
         }; 
 
-        const dButton = document.createElement('button');
+
         dButton.textContent = d;
         document.getElementById("sidebar").append(dButton);
         dButton.onclick = function(){
@@ -57,9 +62,7 @@ class Dashboard {
 
         document.getElementById("content").innerHTML = "Welcome to Dashboard!";
 
-        
+
 
     }
 }
-
-var dashboard = new Dashboard('sidebar','content');
