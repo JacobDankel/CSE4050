@@ -16,7 +16,8 @@ if (cse4050models === undefined) {
 
 cse4050models.exampleModel = function() {
    return {
-      name: 'Jacob Dankel'
+      name: 'Jacob Dankel',
+      motto: 'a software engineer'
    };
 };
 
