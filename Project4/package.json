@@ -13,6 +13,7 @@
   "dependencies": {
     "express": "^4.18.1",
     "file-loader": "^6.2.0",
+    "lint": "^1.1.2",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,15 +22,15 @@
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.19.1",
     "@babel/core": "^7.19.3",
-    "babel-jest": "^29.1.2",
-    "babel-loader": "^8.2.5",
+    "@babel/eslint-parser": "^7.19.1",
     "@babel/preset-env": "^7.19.3",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-stage-2": "^7.8.3",
+    "babel-jest": "^29.1.2",
+    "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
-    "eslint": "^8.24.0",
+    "eslint": "^8.26.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",

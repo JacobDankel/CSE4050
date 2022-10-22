@@ -20,7 +20,7 @@ class CSECourses extends React.Component {
       this.setState({validCourses: string});
     };
 
-    console.log('window.cse4050models.coursesModel()', window.cse4050models.coursesModel());
+    //console.log('window.cse4050models.coursesModel()', window.cse4050models.coursesModel());
   }
 
   render() {

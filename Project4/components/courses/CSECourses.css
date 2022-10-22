@@ -32,3 +32,19 @@ cse4050-courses- here.
 .motto-update {
   font-size: large;
 }
+
+.cse4050-course-search{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px;
+  font-size: x-large;
+  align-self: center;
+}
+
+.cse4050-courses-title{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: large;
+  color: black;
+  background-color: lightgoldenrodyellow; 
+}
