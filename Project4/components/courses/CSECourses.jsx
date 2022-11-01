@@ -26,7 +26,7 @@ class CSECourses extends React.Component {
   render() {
     return (
       <div className ="cse4050-courses" id={'cse4050-courses'}>
-        <Search searchItems = {window.cse4050models.coursesModel()} />
+        <Search searchItems = {window.cse4050models.coursesModel()} searchCallback={this.updateCourses}/>
         {this.state.validCourses.map((validCourses) => <div className='cse4050-courses-title' id={validCourses.slice(0,6)} key = {validCourses.slice(0,6)}>{validCourses}</div>)}
       </div>
     );
