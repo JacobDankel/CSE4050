@@ -13,7 +13,7 @@ class TopBar extends React.Component {
 			<AppBar position="static">
         <Toolbar className="cse4050-toolbar">
           <Typography variant="h6" className="cse4050-logo">
-            Your App Name Here
+            Kanban Board
           </Typography>
           <Stack
 						direction="row"
@@ -21,6 +21,9 @@ class TopBar extends React.Component {
 						sx={{ '& a.active': {color:theme=>theme.palette.primary.contrastText, bgcolor:theme=>theme.palette.primary.main, } }}
 					>
 						{/*Create a Material UI Button to Home and a Button Task*/}
+						<Button variant="contained">Home</Button>
+						<Button variant="contained">Add Task</Button>
+						
 					</Stack>
         </Toolbar>
       </AppBar>
