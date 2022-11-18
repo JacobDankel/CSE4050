@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
@@ -20,8 +20,14 @@ class TopBar extends React.Component {
 					spacing={2}
 					sx={{ '& a.active': {color:theme=>theme.palette.primary.contrastText, bgcolor:theme=>theme.palette.primary.main, } }}
 				>
-					<Button variant='contained' href='/'>Home</Button>
-					<Button variant='contained' href='/tasks'>Task</Button>
+					<Button variant='contatined'>
+						<NavLink to="/">
+							Home
+						</NavLink>
+					</Button>
+
+						<Button variant='contained' href='/'>Home</Button>
+						<Button variant='contained' href='/tasks'>Task</Button>
 				</Stack>
 			</Toolbar>
 		</AppBar>

@@ -18,17 +18,31 @@ class TaskList extends React.Component {
       tasks:window.cse4050models.taskListModel(),
       taskTypes:window.cse4050models.taskTypeListModel(),
     };
+
+    this.handleSearch = event => this.handleSearchFunction(event);
   }
 
-  componentDidMount(){
-    axios.get('/tasks')
-    .then(responce=>{
-      console.log(responce);
-    })
-    .catch(error=>{
-      console.log(error);
-    })
-  };
+  componentDidMount() {
+    axios
+    .get('/api/tasks')
+    .then(response => {
+      //alert(response.data)
+      this.setState({ tasks: response.data });
+  })
+  .catch(error => {
+    alert('error');
+  })
+
+    axios
+        .get('/api/task-types')
+        .then(response => {
+            //alert(response.data)
+            this.setState({ taskTypes: response.data });
+        })
+        .catch(error => {
+            alert('error');
+        })
+};
 
   handledragover = event => {
     event.preventDefault();
@@ -54,7 +68,7 @@ class TaskList extends React.Component {
           <Grid container spacing={2} alignItems="flex-end" >
           {this.state.taskTypes?.map(type => (
             <Grid item xs={12} md={4} key={type.name+"-tasks"} className="new-tasks">
-              <Card variant="outlined" sx={{ borderRadius:0,mb:1}}>
+              <Card variant="outlined" sx={{ borderRadius:0,mb:1,borderLeftColor: type.color}}>
                 <Typography sx={{px:2,py:1,fontWeight:500}}>{type.name}</Typography>
               </Card>
               <Stack
@@ -67,6 +81,8 @@ class TaskList extends React.Component {
                 className="cse4050-task-list"
                 sx={{
                   height: 600,
+                  borderLeft: 3,
+                  borderColor: type.color,
                 }}
               >
                 {this.state.tasks?.filter(task => task.type_id === type._id).map(task => (
@@ -79,7 +95,7 @@ class TaskList extends React.Component {
                   variant="outlined"
                   className="cse4050-task-task"
                 >
-                  <CardContent sx={{borderLeft:3,borderColor:'primary.main'}}>
+                  <CardContent>
                     <Typography>{task.description}</Typography>
                   </CardContent>
                 </Card>
