@@ -7,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import TaskSearchBar from './TaskSearchBar';
+import { response } from 'express';
 /**
  * Define TaskList, a React componment of CS4050 project #5.
  */
@@ -23,25 +24,36 @@ class TaskList extends React.Component {
   }
 
   componentDidMount() {
+    this.getTasks();
+    this.getTaskTypes();
+  }
+
+  getTasks(){
     axios
     .get('/api/tasks')
     .then(response => {
-      //alert(response.data)
-      this.setState({ tasks: response.data });
-  })
-  .catch(error => {
-    alert('error');
-  })
+      this.setState({
+        tasks:response.data
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
 
+  getTaskTypes(){
     axios
-        .get('/api/task-types')
-        .then(response => {
-            //alert(response.data)
-            this.setState({ taskTypes: response.data });
-        })
-        .catch(error => {
-            alert('error');
-        })
+    .get('/api/task-types')
+    .then(response => {
+      this.setState({
+        taskTypes:response.data
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
+
 };
 
   handledragover = event => {
@@ -50,10 +62,19 @@ class TaskList extends React.Component {
 
   handledrop = event => {
     event.preventDefault();
+
+    var newTasks = this.state.tasks;
     var task_id = event.dataTransfer.getData("task_id");
-    if(event.target.classList.contains('cse4050-task-list')) {
-      event.target.appendChild(document.getElementById(task_id));
+    if(event.target.attributes.class.value === 'cse4050-task-list'){
+      var type_id = event.target.attributes.type_id.value;
+    } else {
+      let node = event.target.closest('.cse4050-task-list');
+      if(node){
+        type_id = node.attributes.type_id.value;
+      }
     }
+
+    this.setState({tasks: newTasks});
   };
 
   handledrag = event => {
